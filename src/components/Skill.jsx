@@ -2,54 +2,111 @@ import React from "react";
 
 function Skills() {
   const skills = [
-    "Python",
-    "React",
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Tailwind CSS",
-    "Git",
-    "Responsive Design",
+    {
+      name: "Python",
+      icon: "🐍",
+    },
+    {
+      name: "React",
+      icon: "⚛️",
+    },
+    {
+      name: "HTML",
+      icon: "🌐",
+    },
+    {
+      name: "CSS",
+      icon: "🎨",
+    },
+    {
+      name: "JavaScript",
+      icon: "✨",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "💨",
+    },
+    {
+      name: "Git & GitHub",
+      icon: "🔗",
+    },
+    {
+      name: "Responsive Design",
+      icon: "📱",
+    },
+    {
+      name: "Automation",
+      icon: "🤖",
+    },
   ];
 
   return (
     <section
       id="skills"
-      className="relative py-20 px-6 sm:px-10 lg:px-20 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden"
+      className="relative py-24 px-6 sm:px-10 lg:px-20 bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white overflow-hidden"
     >
-      {/* Background Glow Effects */}
-      <div className="absolute top-10 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full"></div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <p className="text-cyan-400 font-semibold tracking-[0.25em] uppercase text-sm mb-3">
+
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <p className="text-cyan-400 uppercase tracking-[0.3em] text-sm font-semibold mb-3">
             My Expertise
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+
+          <h2 className="text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
             Skills
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mt-4 rounded-full"></div>
+
+          <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mt-5 rounded-full"></div>
         </div>
 
-        {/* Skills Card */}
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500">
-          <p className="text-center text-slate-300 text-lg mb-10 max-w-3xl mx-auto leading-8">
-            I continuously develop my technical skills to build modern,
-            responsive, and user-friendly web applications.
-          </p>
+        {/* Main Card */}
+        <div className="bg-white/5 border border-white/10 backdrop-blur-2xl rounded-[2rem] p-8 sm:p-12 shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500">
+
+          {/* Intro */}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl sm:text-4xl font-bold mb-5">
+              Technical Skills 🚀
+            </h3>
+
+            <p className="text-slate-300 text-lg leading-9 max-w-3xl mx-auto">
+              I continuously improve my technical and creative skills to build
+              modern, responsive, and user-friendly applications. I enjoy
+              learning new technologies and creating innovative projects.
+            </p>
+          </div>
 
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="group bg-slate-900/60 border border-white/10 rounded-2xl px-4 py-4 text-center font-medium text-slate-200 hover:border-cyan-400/40 hover:text-cyan-300 hover:-translate-y-1 transition-all duration-300"
+                className="group bg-slate-900/60 border border-white/10 rounded-3xl p-6 text-center hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-500"
               >
-                {skill}
+
+                {/* Icon */}
+                <div className="text-5xl mb-4 group-hover:scale-110 transition duration-300">
+                  {skill.icon}
+                </div>
+
+                {/* Skill Name */}
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-200 group-hover:text-cyan-300 transition-colors">
+                  {skill.name}
+                </h3>
               </div>
             ))}
+          </div>
+
+          {/* Bottom Quote */}
+          <div className="text-center mt-16">
+            <p className="text-slate-400 italic text-xl">
+              “Skills grow with practice and passion 💫”
+            </p>
           </div>
         </div>
       </div>
